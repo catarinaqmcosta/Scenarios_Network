@@ -7,7 +7,8 @@ This repository contains the Python code that serves as support for the followin
 Correspondence to: Catarina Costa (catarinaqmcosta@gmail.com)
 
 
-# Copyright and License
+
+## Copyright and License
 
 Copyright (C) 2017 the authors.
 
