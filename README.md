@@ -4,6 +4,8 @@ This repository contains the Python code that serves as support for the followin
 
 "ASSESSING THE IMPACT OF EARTHQUAKE SCENARIOS IN TRANSPORTATION NETWORKS AND SURROUNDING INDUSTRY: THE PORTUGUESE MINING FACTORY CASE STUDY"
 
+The Python Notebooks are compatible with version 1.5 of the OpenQuake-engine.
+
 Correspondence to: Catarina Costa (catarinaqmcosta@gmail.com)
 
 
