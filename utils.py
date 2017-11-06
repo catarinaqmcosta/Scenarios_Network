@@ -167,21 +167,6 @@ def parse_continuous_function(elem,nrml):
 
     return IMT, values 
 
-###not working, ver como fazer o parse e por a legenda
-
-def parse_discrete_function(elem,nrml):
-    values = []
-    for params in elem:
-        if params.tag == '%simls' % nrml:
-            IMT = params.attrib['imt']
-            noDamageLimit = str(params.text).split()
-            values.append(noDamageLimit)
-            
-        if params.tag == '%spoes' % nrml:
-            poesValues = str(params.text).split()
-            values.append(poesValues)            
-
-    return IMT, values 
 
 
 def read_vulnerability_model(vulnerability_file):
@@ -321,25 +306,6 @@ def calculate_damage_ff_continuous(i,lonNode,latNode,taxonomyNode,gmvNode,fragil
 
     return damageNode
 
-
-def calculate_damage_ff_discrete(lonNode,latNode,taxonomyNode,gmfs,fragility_model_median_beta):
-####Not working yet####
-    damageNode=[]   
-    indicesLon = [j for j, x in enumerate(gmfs['lon']) if x == lonNode]
-    indicesLat = [j for j, x in enumerate(gmfs['lat']) if x == latNode]
-    indexGmfs = list(set(indicesLon) & set(indicesLat))
-    gmvNode = gmfs['gmv'][int(str(indexGmfs[0]))]
-
-    ffindex = fragility_model_median_beta['taxonomies'].index(str(taxonomyNode))
-    
-#ver o que da isto e como se calcula a partir daqui
-    values_coll = fragility_model_median_beta['values'][ffindex][-1]
-
-    for i in xrange(len(gmvNode)):
-        x = gmvNode[i] 
-        prob_Coll =  0
-
-    return damageNode
 
 
 def calculate_repair_time(repair_model, damage_levels):
